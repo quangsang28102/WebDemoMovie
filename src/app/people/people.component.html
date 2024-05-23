@@ -1,0 +1,21 @@
+<div class="container">
+    <p class="text-white text-2xl font-medium mt-4">Popular People</p>
+<div class="people-container flex justify-around flex-wrap p-4">
+    <div  *ngFor="let data of dataPeople " class="box w-[235px] h-[350px] rounded-xl bg-[#302f35] mt-6 cursor-pointer">
+        <div class="picture rounded-lg">
+            <img class="rounded-xl"
+                    src="https://www.themoviedb.org/t/p/w235_and_h235_face{{data.profile_path}}" alt="">
+        </div>
+        <div class="title pl-4 pt-2 ">
+            <p class="text-white text-lg">{{data.name}}</p>
+        <p class="text-gray-400 text-sm">
+            {{data.known_for[0].title}}{{data.known_for[0].name}},
+            {{data.known_for[1].title}}{{data.known_for[1].name}},
+            {{data.known_for[2].title}}{{data.known_for[2].name}}
+        </p>
+        
+        </div>
+    </div>
+    
+</div>
+</div>

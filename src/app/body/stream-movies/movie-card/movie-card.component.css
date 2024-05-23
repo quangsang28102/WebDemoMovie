@@ -1,0 +1,37 @@
+.movie-list-container {
+    width: 100%; /* Độ rộng của danh sách phim */
+    overflow-x: auto; /* Tạo thanh cuộn ngang */
+    white-space: nowrap; /* Ngăn text bên trong phần tử tự xuống dòng */
+    overflow-y: visible;
+  }
+  
+  .movie-list {
+    display: inline-flex; /* Hiển thị các phim theo chiều ngang */
+  }
+  
+  .movie {
+    width: 184px; 
+    height: 256px;/* Độ rộng của mỗi phim */
+    margin-right: 10px; 
+    background-color: #35342F;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    margin-top: 4px;
+    /* Khoảng cách giữa các phim */
+  }
+  .movie-list-container::-webkit-scrollbar {
+    height:6px; /* Độ rộng của thanh cuộn */    
+  }
+  
+  .movie-list-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Màu nền của con trỏ cuộn */
+    border-radius: 6px; /* Bo góc của con trỏ cuộn */
+    
+
+  }
+  
+  .movie-list-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Màu nền của con trỏ cuộn khi hover */
+  }
+  
+  

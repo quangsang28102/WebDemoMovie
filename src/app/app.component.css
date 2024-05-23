@@ -1,0 +1,15 @@
+ .column::-webkit-scrollbar {
+    width:2px; /* Độ rộng của thanh cuộn */    
+    display: none;
+  }  
+  .column::-webkit-scrollbar-thumb {
+    background-color: #737373; /* Màu nền của con trỏ cuộn */
+    border-radius: 6px; /* Bo góc của con trỏ cuộn */
+  }
+  
+  .column::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Màu nền của con trỏ cuộn khi hover */    
+  }
+  .column:hover.column::-webkit-scrollbar{
+    display: block;
+  }

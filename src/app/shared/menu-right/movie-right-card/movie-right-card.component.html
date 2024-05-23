@@ -1,0 +1,18 @@
+<div class="movie-list-container cursor-pointer">
+    <div class="movie flex relative" *ngFor="let data of dataPopularPlaying">        
+        <div [routerLink]="['/movie', data.id]"  class="poster h-full p-2">
+            <img class="rounded-lg h-full object-cover "
+                    src="https://image.tmdb.org/t/p/w220_and_h330_face{{data.poster_path}}" alt="">
+        </div>
+        <div class="movie-infor text-white flex-grow w-[50%]">
+            <p class="mt-4">{{data.title}}</p>
+            <div class="detail flex justify-between w-full mt-2">
+                <p>{{data.release_date}}</p>
+                <p class="mr-2">{{data.vote_average}}<i class="fa-solid fa-star" style="color: #fff23d;"></i></p>
+            </div>
+        </div>
+        <button [routerLink]="['/movie', data.id]" 
+        class="watch absolute bottom-2 right-24 text-white font-medium z-10">Watch now</button>
+        <!-- Thêm nhiều phim khác ở đây -->
+    </div>
+</div>

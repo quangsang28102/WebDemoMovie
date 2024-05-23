@@ -1,0 +1,32 @@
+<div class="title-container">
+    <div class="title text-2xl font-medium text-white mt-4">Lated Trailer </div>
+</div>
+<div class="bgr">
+    <div class="movie-list-container pb-2 pl-4">
+        <div *ngFor="let data of dataTrailer" class="movie-list ">
+            <!-- Danh sách các phim -->
+            <div
+                class="movie relative shadow-lg cursor-pointer transition-transform transform scale-100 hover:scale-105 duration-500">
+                <div class="movie-img">
+                    <img class="rounded-lg object-cover"
+                        src="https://image.tmdb.org/t/p/w355_and_h200_face{{data.backdrop_path}}" alt="">
+                </div>
+                <div
+                    class="toast rounded-lg absolute w-full h-full bg-opacity-75 bg-[#bababa] top-0 left-0 opacity-0 transition-opacity duration-500 hover:opacity-100">
+                    <div class="toast-content w-full absolute bottom-14 font-medium">
+                        <div class="movie-tittle w-full p-4 whitespace-normal text-white">{{data.title}}</div>
+                        <div class="movie-status flex justify-around text-white">
+                            <p>{{data.release_date}}</p>
+                            <p>{{data.vote_average}}<i class="fa-solid fa-star" style="color: #fff23d;"></i></p>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute left-4 bottom-2  watch w-[90%] bg-[#F63C6D] flex items-center justify-center p-2 rounded-lg hover:scale-105 duration-500 text-white">
+                        <a [routerLink]="['/movie', data.id]">Watch now</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,13 +1,42 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>AngularWeb</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://www.youtube.com/iframe_api"></script>
+
 </head>
+
 <body>
-  <app-root></app-root>
+  <app-root></app-root>  
+  <button id="to-top-button" onclick="goToTop()" title="Go To Top"
+    class="hidden fixed z-90 bottom-8 right-8 border-0 w-16 h-16 rounded-full drop-shadow-md bg-[#f63c6d] text-white text-3xl font-bold">&uarr;</button>
+
+    <!-- Javascript code -->
+    <script>
+      var toTopButton = document.getElementById("to-top-button");
+
+      // When the user scrolls down 200px from the top of the document, show the button
+      window.onscroll = function () {
+          if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+              toTopButton.classList.remove("hidden");
+          } else {
+              toTopButton.classList.add("hidden");
+          }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function goToTop() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+  </script>
 </body>
+
 </html>

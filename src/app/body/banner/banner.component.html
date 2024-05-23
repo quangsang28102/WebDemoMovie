@@ -1,0 +1,32 @@
+<div *ngIf="dataBanner && dataBanner.length > 0" class="banner-container">
+    <img [routerLink]="['/movie', image.id]"  *ngFor="let image of dataBanner; let i = index"
+        [src]="'https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces' + image.backdrop_path" alt=""
+        [ngClass]="{'image-active': selectedIndex === i}" class="fade object-cover">
+        <div *ngFor="let image of dataBanner; let i = index" class="title">
+            <div class="banner-name text-4xl font-bold text-white mb-6 " [ngClass]="{'title-active': selectedIndex === i}">
+                {{image.title}}
+            </div>
+            <div class="genres-container mb-6">
+                <ul class="flex">
+                    <li>Action</li>
+                    <li>Adventure</li>
+                    <li>Drama</li>
+                </ul>
+            </div>
+            <div class="absolute text-white font-medium z-10">               
+                <button [routerLink]="['/movie', image.id]" class="" class="watch mr-4 z-50">Watch</button>
+                <button class="more">+</button></div>            
+        </div>
+    <div *ngIf="indicators" class="banner-dot-container">
+        <span *ngFor="let dot of dataBanner; let i = index" class="dot" [ngClass]="{'active': selectedIndex === i}"
+            (click)="selectImage(i)"></span>
+    </div>
+
+    <button *ngIf="controls" class="btn-banner btn-prev" (click)="onPrevClick()">
+        <i class="fas fa-chevron-left icon-carousel icon-prev hidden"></i>
+    </button>
+    <button *ngIf="controls" class="btn-banner btn-next" (click)="onNextClick()">
+        <i class="fas fa-chevron-right icon-carousel icon-next"></i>
+    </button>
+    
+</div>

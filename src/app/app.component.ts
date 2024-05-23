@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-web';
+  isHidden: boolean = true;
+
+  toggleVisibility() {
+    this.isHidden = !this.isHidden;
+  }  
 }

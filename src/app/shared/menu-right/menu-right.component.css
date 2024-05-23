@@ -1,0 +1,10 @@
+.container{
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: 90%;
+}
+.container-movie{
+    width: 90%;
+    margin: auto;    
+}
